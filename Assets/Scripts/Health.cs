@@ -24,7 +24,14 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            Death();
         }
+    }
+
+    public virtual void Death()
+    {
+        //sfx and anims
+
+        Destroy(gameObject);
     }
 }
