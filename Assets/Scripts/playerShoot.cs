@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class shoot : MonoBehaviour
+public class playerShoot : MonoBehaviour
 {
 
     public Transform firePoint;
