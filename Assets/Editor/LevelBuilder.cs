@@ -8,7 +8,7 @@ using UnityEngine;
 // Tools > Alien Prototype > Build Basic Level
 //
 // Builds 4 simple map scenes (Map1-Map4) with outer walls, a few inner walls,
-// and doorways that switch maps. Uses the team's Player from SampleScene.
+// enemies, and doorways that switch maps. Uses the team's Player and Enemy prefabs.
 //
 //   [Map 4] -- [Map 3]
 //      |          |
@@ -20,6 +20,7 @@ public static class LevelBuilder
     const string MapFolder = "Assets/Scenes/Maps";
     const string SquarePath = "Assets/Level/Art/Square.png";
     const string PlayerPrefabPath = "Assets/Prefabs/Player.prefab";
+    const string EnemyPrefabPath = "Assets/Prefabs/Enemy.prefab";
     const string SampleScenePath = "Assets/Scenes/SampleScene.unity";
 
     // Map interior is 32 x 18 units; the camera shows the whole map.
@@ -41,10 +42,12 @@ public static class LevelBuilder
         public Vector2? start; // only the first map
         public List<(DoorSide side, string target)> doors = new List<(DoorSide, string)>();
         public List<(Vector2 center, Vector2 size)> walls = new List<(Vector2, Vector2)>();
+        public List<Vector2> enemies = new List<Vector2>();
     }
 
     // ---- Edit the maps here ---------------------------------------------------
     // Inner walls: (center, size) in world units. Map spans x -16..16, y -9..9.
+    // Enemies: positions for the team's Enemy prefab (respawn each time you enter the map).
     static List<MapDef> Layout() => new List<MapDef>
     {
         new MapDef
@@ -58,6 +61,7 @@ public static class LevelBuilder
                 (new Vector2(3f, 3f), new Vector2(12f, 0.5f)),
                 (new Vector2(9f, -4f), new Vector2(0.5f, 6f)),
             },
+            enemies = { new Vector2(2f, -5f), new Vector2(-11f, 6f) },
         },
         new MapDef
         {
@@ -70,6 +74,7 @@ public static class LevelBuilder
                 (new Vector2(6f, 4f), new Vector2(0.5f, 10f)),
                 (new Vector2(11f, -5f), new Vector2(6f, 0.5f)),
             },
+            enemies = { new Vector2(12f, 3f), new Vector2(0f, -7f), new Vector2(-13f, -7f) },
         },
         new MapDef
         {
@@ -82,6 +87,7 @@ public static class LevelBuilder
                 (new Vector2(5f, -1f), new Vector2(0.5f, 10f)),
                 (new Vector2(11f, 3f), new Vector2(8f, 0.5f)),
             },
+            enemies = { new Vector2(-10f, 6f), new Vector2(1f, 4f), new Vector2(11f, 0f), new Vector2(11f, -6f) },
         },
         new MapDef
         {
@@ -94,6 +100,7 @@ public static class LevelBuilder
                 (new Vector2(0f, 4f), new Vector2(10f, 0.5f)),
                 (new Vector2(8f, -2f), new Vector2(0.5f, 10f)),
             },
+            enemies = { new Vector2(0f, 0f), new Vector2(-12f, 6f), new Vector2(-12f, -6f), new Vector2(12f, 7f), new Vector2(4f, 7f) },
         },
     };
     // ---------------------------------------------------------------------------
@@ -116,10 +123,13 @@ public static class LevelBuilder
                 "Map scenes already exist in " + MapFolder + ". Overwrite them?", "Overwrite", "Cancel"))
             return;
 
+        var enemy = AssetDatabase.LoadAssetAtPath<GameObject>(EnemyPrefabPath);
+        if (enemy == null) Debug.LogWarning("[LevelBuilder] No Enemy prefab at " + EnemyPrefabPath + ", building maps without enemies.");
+
         var sprite = GetSquareSprite();
         EnsureFolder(MapFolder);
         foreach (var m in maps)
-            BuildMap(m, sprite, player);
+            BuildMap(m, sprite, player, enemy);
 
         AddToBuildSettings(maps);
         AssetDatabase.SaveAssets();
@@ -130,7 +140,7 @@ public static class LevelBuilder
 
     static string ScenePath(MapDef m) => MapFolder + "/" + m.scene + ".unity";
 
-    static void BuildMap(MapDef def, Sprite sprite, GameObject playerPrefab)
+    static void BuildMap(MapDef def, Sprite sprite, GameObject playerPrefab, GameObject enemyPrefab)
     {
         var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
 
@@ -183,6 +193,18 @@ public static class LevelBuilder
 
         if (def.start.HasValue)
             MakeSpawn("Start", spawnsParent, def.start.Value, Vector2.up);
+
+        // Team enemies
+        if (enemyPrefab != null)
+        {
+            var enemiesParent = Child("Enemies", root.transform);
+            foreach (var pos in def.enemies)
+            {
+                var e = (GameObject)PrefabUtility.InstantiatePrefab(enemyPrefab, scene);
+                e.transform.SetParent(enemiesParent, false);
+                e.transform.position = pos;
+            }
+        }
 
         // Team player (Room moves it to the right spawn at runtime)
         var player = (GameObject)PrefabUtility.InstantiatePrefab(playerPrefab, scene);
