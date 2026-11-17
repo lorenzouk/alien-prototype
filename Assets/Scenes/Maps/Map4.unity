@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 110425469}
   - component: {fileID: 110425471}
   - component: {fileID: 110425470}
+  - component: {fileID: 110425472}
   m_Layer: 0
   m_Name: Wall_South
   m_TagString: Untagged
@@ -319,6 +320,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &110425472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110425468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &155614724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -392,6 +409,7 @@ GameObject:
   - component: {fileID: 181651911}
   - component: {fileID: 181651913}
   - component: {fileID: 181651912}
+  - component: {fileID: 181651914}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -519,6 +537,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &181651914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181651910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &305957363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -580,6 +614,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81a7c3f0755a77146a34578882eebb76, type: 3}
+--- !u!4 &305957364 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1761804585953639678, guid: 81a7c3f0755a77146a34578882eebb76, type: 3}
+  m_PrefabInstance: {fileID: 305957363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &366181292
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +630,7 @@ GameObject:
   - component: {fileID: 366181293}
   - component: {fileID: 366181295}
   - component: {fileID: 366181294}
+  - component: {fileID: 366181296}
   m_Layer: 0
   m_Name: Wall_South
   m_TagString: Untagged
@@ -718,6 +758,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &366181296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366181292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &373526823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -836,6 +892,7 @@ GameObject:
   - component: {fileID: 420563123}
   - component: {fileID: 420563125}
   - component: {fileID: 420563124}
+  - component: {fileID: 420563126}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -963,6 +1020,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &420563126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420563122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &492732053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,7 +1134,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1988812084}
   - {fileID: 1460989369}
   - {fileID: 1502933822}
   - {fileID: 1478599107}
@@ -1533,12 +1605,83 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1988812084}
+  - {fileID: 1720143276}
   - {fileID: 602951058}
   - {fileID: 492732054}
   - {fileID: 2011958983}
   - {fileID: 574589521}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1398367486
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1810590044414802604, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810590044414802604, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 305957364}
+    - target: {fileID: 1810590044414802604, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
+      propertyPath: playerSpawnPoint
+      value: 
+      objectReference: {fileID: 406021710}
+    - target: {fileID: 4410048300478486027, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.021067
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410048300478486027, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.249273
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410048300478486027, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410048300478486027, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410048300478486027, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410048300478486027, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410048300478486027, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410048300478486027, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410048300478486027, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410048300478486027, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463052646802250983, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
+      propertyPath: m_Name
+      value: BigSpaceShip
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
 --- !u!1 &1460989368
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,6 +1693,7 @@ GameObject:
   - component: {fileID: 1460989369}
   - component: {fileID: 1460989371}
   - component: {fileID: 1460989370}
+  - component: {fileID: 1460989372}
   m_Layer: 0
   m_Name: Wall_North
   m_TagString: Untagged
@@ -1677,6 +1821,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1460989372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460989368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1478599106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,6 +1848,7 @@ GameObject:
   - component: {fileID: 1478599107}
   - component: {fileID: 1478599109}
   - component: {fileID: 1478599108}
+  - component: {fileID: 1478599110}
   m_Layer: 0
   m_Name: Wall_East
   m_TagString: Untagged
@@ -1815,6 +1976,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1478599110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478599106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1491456914
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,6 +2003,7 @@ GameObject:
   - component: {fileID: 1491456915}
   - component: {fileID: 1491456917}
   - component: {fileID: 1491456916}
+  - component: {fileID: 1491456918}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -1953,6 +2131,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1491456918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491456914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1502933821
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,6 +2158,7 @@ GameObject:
   - component: {fileID: 1502933822}
   - component: {fileID: 1502933824}
   - component: {fileID: 1502933823}
+  - component: {fileID: 1502933825}
   m_Layer: 0
   m_Name: Wall_East
   m_TagString: Untagged
@@ -2091,6 +2286,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1502933825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502933821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1560502217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2194,6 +2405,7 @@ GameObject:
   - component: {fileID: 1666997527}
   - component: {fileID: 1666997529}
   - component: {fileID: 1666997528}
+  - component: {fileID: 1666997530}
   m_Layer: 0
   m_Name: Wall_West
   m_TagString: Untagged
@@ -2321,6 +2533,102 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1666997530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666997526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
+--- !u!1 &1720143275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1720143276}
+  - component: {fileID: 1720143278}
+  - component: {fileID: 1720143277}
+  m_Layer: 0
+  m_Name: NavMesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1720143276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720143275}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 32, y: 18, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1157839375}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1720143277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720143275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70bd44a44cd62c64fbfc1eea95b24880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Extensions.CollectSources2d
+  m_OverrideByGrid: 0
+  m_UseMeshPrefab: {fileID: 0}
+  m_CompressBounds: 0
+  m_OverrideVector: {x: 1, y: 1, z: 1}
+--- !u!114 &1720143278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720143275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e04976799df50f54ba128eff723155a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshSurface
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_MinRegionArea: 0
+  m_HideEditorLogs: 0
+  m_NavMeshData: {fileID: 23800000, guid: 9fbcea28db2cb224abb4c03e750de421, type: 2}
 --- !u!1 &1988812083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,6 +2639,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1988812084}
   - component: {fileID: 1988812085}
+  - component: {fileID: 1988812086}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -2346,12 +2655,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988812083}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 32, y: 18, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 602951058}
+  m_Father: {fileID: 1157839375}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1988812085
 SpriteRenderer:
@@ -2412,6 +2721,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1988812086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988812083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2010458067
 GameObject:
   m_ObjectHideFlags: 0
@@ -2423,6 +2748,7 @@ GameObject:
   - component: {fileID: 2010458068}
   - component: {fileID: 2010458070}
   - component: {fileID: 2010458069}
+  - component: {fileID: 2010458071}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -2550,6 +2876,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2010458071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010458067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NavMeshPlus::NavMeshPlus.Components.NavMeshModifier
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2011958982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2652,3 +2994,4 @@ SceneRoots:
   - {fileID: 1560502220}
   - {fileID: 1157839375}
   - {fileID: 305957363}
+  - {fileID: 1398367486}

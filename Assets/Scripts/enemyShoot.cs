@@ -3,18 +3,22 @@ using UnityEngine;
 
 public class enemyShoot : MonoBehaviour
 {
-    public float shootCooldown = 0.75f;
+    public float minCooldown = 2f;
+    public float maxCooldown = 6f;
     public GameObject bulletPrefab;
-
+    public AudioSource audioSource;
+    public AudioClip shootSound;
+    
     public float dirVariance = 0.1f;
 
     Transform player;
-
+    float shootCooldown;
     float cooldownTimer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        shootCooldown = Random.Range(minCooldown, maxCooldown);
         player = FindAnyObjectByType<playerMovement>().transform;
     }
 
@@ -26,9 +30,10 @@ public class enemyShoot : MonoBehaviour
         if (cooldownTimer > shootCooldown)
         {
             cooldownTimer = 0f;
-
             shoot();
         }
+        //face player
+        transform.up = transform.position - player.position;
     }
 
     void shoot()
@@ -73,6 +78,7 @@ public class enemyShoot : MonoBehaviour
 
 
         //----------------------------actually fire--------------------------------
+        audioSource.PlayOneShot(shootSound);
         float angle = Mathf.Atan2(shootDir.x, shootDir.y) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.Euler(0, 0, angle);
 

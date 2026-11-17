@@ -3,7 +3,8 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int maxHealth = 2;
-
+    public AudioSource audioSource;
+    public AudioClip explosion;
     int currentHealth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,7 +32,7 @@ public class Health : MonoBehaviour
     public virtual void Death()
     {
         //sfx and anims
-
+        AudioSource.PlayClipAtPoint(explosion, transform.position);
         Destroy(gameObject);
     }
 }
