@@ -135,7 +135,7 @@ public static class LevelBuilder
         AssetDatabase.SaveAssets();
 
         EditorSceneManager.OpenScene(ScenePath(maps[0]));
-        Debug.Log("[LevelBuilder] Built " + maps.Count + " maps in " + MapFolder + ". Press Play in " + maps[0].scene + ".");
+        Debug.Log("[LevelBuilder] Built " + maps.Count + " maps in " + MapFolder + ".");
     }
 
     static string ScenePath(MapDef m) => MapFolder + "/" + m.scene + ".unity";
@@ -303,17 +303,9 @@ public static class LevelBuilder
         var existing = AssetDatabase.LoadAssetAtPath<GameObject>(PlayerPrefabPath);
         if (existing != null) return existing;
 
-        const string pullHint = "\n\nYour project is behind GitHub. Get the latest main (it has the Player), then run this again.";
-        string projectPath = Path.GetDirectoryName(Application.dataPath);
-        if (AssetDatabase.FindAssets("playerMovement t:MonoScript").Length == 0)
-        {
-            problem = "Unity can't find playerMovement.cs in the project open at:\n" + projectPath +
-                      "\n\nIf that isn't the folder you pulled into, open the right one from Unity Hub." + pullHint;
-            return null;
-        }
         if (!File.Exists(SampleScenePath))
         {
-            problem = SampleScenePath + " is missing." + pullHint;
+            problem = SampleScenePath + " is missing.";
             return null;
         }
 
@@ -321,13 +313,12 @@ public static class LevelBuilder
         var player = GameObject.Find("Player");
         if (player == null || player.GetComponent<Rigidbody2D>() == null)
         {
-            problem = "SampleScene has no Player object with a Rigidbody2D." + pullHint;
+            problem = "SampleScene has no Player object with a Rigidbody2D.";
             return null;
         }
         if (GameObjectUtility.GetMonoBehavioursWithMissingScriptCount(player) > 0)
         {
-            problem = "The Player in SampleScene has missing scripts. Usually this means there are compile errors: " +
-                      "fix the red errors in the Console first, then run this again.";
+            problem = "The Player in SampleScene has missing scripts.";
             return null;
         }
 
