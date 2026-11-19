@@ -33,7 +33,7 @@ public class Room : MonoBehaviour
     static void ResetStatics() => clearedRooms.Clear();
 
     float bannerTime = -100f;
-    GUIStyle hudStyle, bannerStyle;
+    GUIStyle bannerStyle;
 
     bool IsFinalRoom => roomNumber >= totalRooms;
 
@@ -105,16 +105,10 @@ public class Room : MonoBehaviour
 
     void OnGUI()
     {
-        if (hudStyle == null)
+        if (bannerStyle == null)
         {
-            hudStyle = new GUIStyle(GUI.skin.label) { fontSize = 22, fontStyle = FontStyle.Bold };
-            hudStyle.normal.textColor = Color.white;
-            bannerStyle = new GUIStyle(hudStyle) { fontSize = 40, alignment = TextAnchor.MiddleCenter };
+            bannerStyle = new GUIStyle(GUI.skin.label) { fontSize = 40, fontStyle = FontStyle.Bold, alignment = TextAnchor.MiddleCenter };
         }
-
-        int left = EnemiesLeft();
-        string status = IsCleared ? "CLEAR" : "Enemies: " + left;
-        GUI.Label(new Rect(16, 10, 400, 30), roomName.ToUpper() + "  (" + roomNumber + "/" + totalRooms + ")   " + status, hudStyle);
 
         bool recent = Time.unscaledTime - bannerTime < 2.5f;
         if (IsCleared && (IsFinalRoom || recent))
