@@ -1421,6 +1421,16 @@ MonoBehaviour:
   side: 0
   targetScene: Map4
   targetSpawn: South
+  requiresClear: 0
+  barrier: {fileID: 0}
+  fill: {fileID: 0}
+  frame: []
+  chevrons: []
+  label: {fileID: 0}
+  openText: NEXT
+  openColor: {r: 0.25, g: 1, b: 0.45, a: 1}
+  lockedColor: {r: 1, g: 0.25, b: 0.25, a: 1}
+  unlockSound: {fileID: 0}
 --- !u!61 &727943928
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1606,12 +1616,16 @@ PrefabInstance:
       objectReference: {fileID: 5463052646802250983, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
     - target: {fileID: 1810590044414802604, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
       propertyPath: speed
-      value: 5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 1810590044414802604, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 262468136}
+    - target: {fileID: 1810590044414802604, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
+      propertyPath: spawnDelay
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1810590044414802604, guid: 34f1dc3eb3501c54996cf191da31dc60, type: 3}
       propertyPath: playerSpawnPoint
       value: 
@@ -2544,6 +2558,16 @@ MonoBehaviour:
   side: 1
   targetScene: Map2
   targetSpawn: West
+  requiresClear: 0
+  barrier: {fileID: 0}
+  fill: {fileID: 0}
+  frame: []
+  chevrons: []
+  label: {fileID: 0}
+  openText: NEXT
+  openColor: {r: 0.25, g: 1, b: 0.45, a: 1}
+  lockedColor: {r: 1, g: 0.25, b: 0.25, a: 1}
+  unlockSound: {fileID: 0}
 --- !u!61 &2011958985
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2818,6 +2842,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Room
   roomName: Map 1
   defaultSpawn: Start
+  roomNumber: 1
+  totalRooms: 5
+  enemiesRoot: {fileID: 0}
+  clearSound: {fileID: 0}
 --- !u!4 &2143490848
 Transform:
   m_ObjectHideFlags: 0
