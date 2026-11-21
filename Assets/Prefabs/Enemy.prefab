@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915684072b82f7f4598437eb1610d610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  variance: 1
+  variance: 0.5
   moveDuration: 1
   waitDuration: 0.5
 --- !u!1 &4997284316919503586
