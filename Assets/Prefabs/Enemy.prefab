@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 2660546185239544796}
   - component: {fileID: 1889507944054554573}
   - component: {fileID: 597474315836895951}
+  - component: {fileID: 494081199555130129}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -304,6 +305,21 @@ MonoBehaviour:
   maxHealth: 1
   audioSource: {fileID: 3438508436206935599}
   explosion: {fileID: 8300000, guid: ea66686a3e3bfec4ea287a7aa1066acb, type: 3}
+--- !u!114 &494081199555130129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965337158196739704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915684072b82f7f4598437eb1610d610, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  variance: 1
+  moveDuration: 1
+  waitDuration: 0.5
 --- !u!1 &4997284316919503586
 GameObject:
   m_ObjectHideFlags: 0
