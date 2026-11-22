@@ -39,6 +39,9 @@ public class Room : MonoBehaviour
 
     void Awake()
     {
+         // Older maps don't have enemiesRoot set: find the "Enemies" child.
+        if (enemiesRoot == null) enemiesRoot = transform.Find("Enemies");
+
         var target = PlacePlayer();
 
         // Big ship (Evil Otto) enters where the player entered.
@@ -94,6 +97,10 @@ public class Room : MonoBehaviour
 
     void Update()
     {
+        // Older maps don't have enemiesRoot set: find the "Enemies" child.
+        if (enemiesRoot == null) enemiesRoot = transform.Find("Enemies");
+        if (enemiesRoot == null) return; // no enemies to track
+
         if (IsCleared || EnemiesLeft() > 0) return;
 
         IsCleared = true;
@@ -102,7 +109,6 @@ public class Room : MonoBehaviour
         if (clearSound != null && Camera.main != null)
             AudioSource.PlayClipAtPoint(clearSound, Camera.main.transform.position);
     }
-
     void OnGUI()
     {
         if (bannerStyle == null)
@@ -113,7 +119,7 @@ public class Room : MonoBehaviour
         bool recent = Time.unscaledTime - bannerTime < 2.5f;
         if (IsCleared && (IsFinalRoom || recent))
         {
-            string text = IsFinalRoom ? "ALL ROOMS CLEARED!" : "ROOM CLEAR - NEXT DOOR OPEN";
+            string text = IsFinalRoom ? "ALL ROOMS CLEARED!" : " NEXT ROOM IS OPEN";
             bannerStyle.normal.textColor = IsFinalRoom ? new Color(1f, 0.85f, 0.2f) : new Color(0.3f, 1f, 0.5f);
             GUI.Label(new Rect(0, Screen.height * 0.18f, Screen.width, 60), text, bannerStyle);
         }
