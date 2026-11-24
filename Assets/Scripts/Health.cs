@@ -5,6 +5,8 @@ public class Health : MonoBehaviour
     public int maxHealth = 2;
     public AudioSource audioSource;
     public AudioClip explosion;
+    public GameObject explosionParticles;
+    public int scoreValue = 100;
     int currentHealth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,6 +35,10 @@ public class Health : MonoBehaviour
     {
         //sfx and anims
         AudioSource.PlayClipAtPoint(explosion, transform.position);
+        GameObject particles = Instantiate(explosionParticles, transform.position, Quaternion.identity);
+        particles.GetComponent<ParticleSystem>().Play();
+        //score
+        ScoreManager.Instance.AddScore(scoreValue);
         Destroy(gameObject);
     }
 }

@@ -25,6 +25,12 @@ public class enemyShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if player is null, return
+        if (player == null)
+        {
+            return;
+        }
+
         //timer code
         cooldownTimer += Time.deltaTime;
         if (cooldownTimer > shootCooldown)
@@ -38,6 +44,11 @@ public class enemyShoot : MonoBehaviour
 
     void shoot()
     {
+        // if player is null, return
+        if (player == null)
+        {
+            return;
+        }
         //------------------------find shoot angle------------------------------
         Vector2 shootDir;
 

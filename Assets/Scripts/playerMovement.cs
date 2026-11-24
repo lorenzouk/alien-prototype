@@ -15,7 +15,7 @@ public class playerMovement : MonoBehaviour
 
     void Update()
     {
-        rb.linearVelocity = movementInput * moveSpeed;
+        rb.linearVelocity = movementInput.normalized * moveSpeed;
         if (movementInput != Vector2.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, movementInput);

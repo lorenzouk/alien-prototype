@@ -8,6 +8,6 @@ public class PlayerHealth : Health
     public override void Death()
     {
         print("You died!!!!!!!!!!!!!!!!");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        ScoreManager.Instance.ResetScoreAndReturnToFirstMap();
     }
 }

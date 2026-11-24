@@ -124,4 +124,9 @@ public class Room : MonoBehaviour
             GUI.Label(new Rect(0, Screen.height * 0.18f, Screen.width, 60), text, bannerStyle);
         }
     }
+
+    public static void ResetRoomProgress()
+    {
+        clearedRooms.Clear();
+    }
 }
