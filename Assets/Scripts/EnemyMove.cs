@@ -12,16 +12,32 @@ public class EnemyMove : MonoBehaviour
     Vector2 startPosition;
     Vector2 targetPosition;
     float elapsedMoveTime = 0.0f;
+    Transform playerTransform;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         origin = transform.position;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null) playerTransform = player.transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (playerTransform == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player == null)
+            {
+                isMoving = false;
+                elapsedMoveTime = 0.0f;
+                waitTimer = 0.0f;
+                return;
+            }
+            playerTransform = player.transform;
+        }
+
         //if not moving, wait
         if (!isMoving)
         {
@@ -29,7 +45,6 @@ public class EnemyMove : MonoBehaviour
             if (waitTimer > waitDuration)
             {
                 waitTimer = 0.0f;
-
                 startPosition = transform.position;
                 //set target before move is called
                 targetPosition = origin + new Vector2(Random.Range(-variance, variance), Random.Range(-variance, variance));

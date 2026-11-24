@@ -13,6 +13,8 @@ using UnityEngine;
 [DefaultExecutionOrder(-100)]
 public class Room : MonoBehaviour
 {
+    [Header("UI Font")]
+    public Font customFont;
     public string roomName = "Map";
     [Tooltip("Spawn used when the scene is played directly (no door was used).")]
     public string defaultSpawn = "Start";
@@ -113,7 +115,7 @@ public class Room : MonoBehaviour
     {
         if (bannerStyle == null)
         {
-            bannerStyle = new GUIStyle(GUI.skin.label) { fontSize = 40, fontStyle = FontStyle.Bold, alignment = TextAnchor.MiddleCenter };
+            bannerStyle = new GUIStyle(GUI.skin.label) { font = customFont, fontSize = 20, alignment = TextAnchor.MiddleCenter };
         }
 
         bool recent = Time.unscaledTime - bannerTime < 2.5f;

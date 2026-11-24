@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 5651863bb18a2824ca4c41096f497dc3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - customFont: {fileID: 12800000, guid: 78fda9a0309c9bf419394e798abcfd11, type: 3}
+  - enemiesRoot: {instanceID: 0}
+  - clearSound: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

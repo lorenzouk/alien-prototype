@@ -306,6 +306,7 @@ MonoBehaviour:
   maxHealth: 1
   audioSource: {fileID: 3438508436206935599}
   explosion: {fileID: 8300000, guid: ea66686a3e3bfec4ea287a7aa1066acb, type: 3}
+  explosion2: {fileID: 8300000, guid: ea66686a3e3bfec4ea287a7aa1066acb, type: 3}
   explosionParticles: {fileID: 3977730552087739265}
   scoreValue: 100
 --- !u!114 &494081199555130129
